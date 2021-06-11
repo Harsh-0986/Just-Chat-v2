@@ -1,11 +1,11 @@
-import { useEffecet, useState } from "react";
+import { useEffect, useState } from "react";
 
 const PREFIX = "Just-Chat";
 
 export default function useLocalStorage(key, initialValue) {
   const prefixedKey = PREFIX + key;
   const [value, setValue] = useState(() => {
-    const jsonValue = localstorage.getItem(prefixedKey);
+    const jsonValue = localStorage.getItem(prefixedKey);
     if (jsonValue != null) return JSON.parse(jsonValue);
     if (typeof initialValue === "function") {
       return initialValue();
@@ -14,7 +14,7 @@ export default function useLocalStorage(key, initialValue) {
     }
   });
 
-  useEffecet(() => {
+  useEffect(() => {
     localStorage.setItem(prefixedKey, JSON.stringify(value));
   }, [prefixedKey, value]);
 
