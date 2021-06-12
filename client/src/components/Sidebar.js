@@ -38,7 +38,7 @@ export default function Sidebar({ id }) {
           </Tab.Pane>
         </Tab.Content>
         <div className="p-2 border border-top border-left-0 small align-items-center">
-          Your ID: <span classsName="text-muted">{id}</span>
+          Your ID: <span className="text-muted">{id}</span>
           <Button
             style={{ width: "27vw" }}
             className="m-2"

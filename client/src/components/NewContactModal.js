@@ -1,16 +1,19 @@
 import React, { useRef } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
+import { useContacts } from "../contexts/ContactsProvider";
 
 export default function NewContactModal({ closeModal }) {
+  const idRef = useRef();
+  const nameRef = useRef();
+  const { createContact } = useContacts();
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    // createContact(idRef.current.value, nameref.current.value)
+    createContact(idRef.current.value, nameRef.current.value);
     closeModal();
   }
 
-  const idRef = useRef();
-  const nameRef = useRef();
   return (
     <>
       <Modal.Header>Create Contact</Modal.Header>
@@ -24,7 +27,15 @@ export default function NewContactModal({ closeModal }) {
             <Form.Label>Name</Form.Label>
             <Form.Control type="text" ref={nameRef} required></Form.Control>
           </Form.Group>
-          <Button type="submit">Create Contact</Button>
+          <div class="w-100 align-items-center justify-content-center">
+            <Button
+              type="submit"
+              className="mt-3 align-items-center justify-content-center"
+              style={{ width: "60vw" }}
+            >
+              Create Contact
+            </Button>
+          </div>
         </Form>
       </Modal.Body>
     </>
