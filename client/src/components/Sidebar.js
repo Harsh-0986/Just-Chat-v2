@@ -13,6 +13,8 @@ export default function Sidebar({ id }) {
   const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY);
   const [modalOpen, setModalOpen] = useState(false);
   const conversationsOpen = activeKey === CONVERSATIONS_KEY;
+  const url = window.location.href;
+  const copyUrl = "Follow this link to join me on Just-Chat " + "\n" + url + id;
 
   function closeModal() {
     setModalOpen(false);
@@ -43,7 +45,7 @@ export default function Sidebar({ id }) {
             style={{ width: "27vw" }}
             className="m-2"
             variant="secondary"
-            onClick={() => navigator.clipboard.writeText(id)}
+            onClick={() => navigator.clipboard.writeText(copyUrl)}
           >
             Copy Your ID
           </Button>
