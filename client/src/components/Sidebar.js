@@ -50,17 +50,18 @@ export default function Sidebar({ id }) {
             <Contacts />
           </Tab.Pane>
         </Tab.Content>
-        <div className="p-2 border border-top border-left-0 small align-items-center">
+        <div className="p-2 border border-top border-left-0 small align-items-center w-100">
           Your ID: <span className="text-muted">{id}</span>
-          <Button
-            style={{ width: "27vw" }}
-            className="m-2"
-            variant="secondary"
-            onClick={() => navigator.clipboard.writeText(copyUrl)}
-          >
-            Copy Your ID
-          </Button>
         </div>
+        <Button
+          // style={{ width: "27vw" }}
+          className="m-2 w-70"
+          variant="secondary"
+          onClick={() => navigator.clipboard.writeText(id)}
+          style={{ fontFamily: "Viaoda Libre, cursive" }}
+        >
+          Copy Your ID
+        </Button>
         <Button onClick={() => setModalOpen(true)} className="rounded-0">
           New {conversationsOpen ? "Conversation" : "Contact"}
         </Button>
