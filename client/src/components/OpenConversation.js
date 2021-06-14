@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import { useConversations } from "../contexts/ConversationsProvider";
-
+import "../";
 export default function OpenConversation() {
   const [text, setText] = useState("");
   const setRef = useCallback((node) => {
@@ -22,7 +22,7 @@ export default function OpenConversation() {
   }
 
   return (
-    <div className="d-flex flex-column flex-grow-1">
+    <div className="d-flex flex-column flex-grow-1 ">
       <div className="flex-grow-1 overflow-auto">
         <div className=" d-flex flex-column align-items-start justify-content-end px-3">
           {selectedConversation.messages.map((message, index) => {
@@ -40,6 +40,7 @@ export default function OpenConversation() {
                   className={`rounded px-2 py-1 ${
                     message.fromMe ? "bg-primary text-white" : "border"
                   }`}
+                  style={{ fontFamily: "Mate SC, cursive" }}
                 >
                   {message.text}
                 </div>
@@ -53,7 +54,9 @@ export default function OpenConversation() {
                 {message.fromMe && (
                   <div
                     className="text-muted small align-items-start"
-                    style={{ textAlign: "right" }}
+                    style={{
+                      textAlign: "right",
+                    }}
                   >
                     You
                   </div>

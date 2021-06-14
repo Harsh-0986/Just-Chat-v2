@@ -6,7 +6,7 @@ export default function Contacts() {
   const { contacts } = useContacts();
 
   return (
-    <ListGroup variant="flush">
+    <ListGroup variant="flush" style={{ fontFamily: "Merriweather, serif" }}>
       {contacts.map((contact) => (
         <ListGroup.Item key={contact.id}>{contact.name}</ListGroup.Item>
       ))}

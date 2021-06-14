@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles.css";
 // import { useState } from "react";
 import Login from "./Login";
 import useLocalStorage from "../hooks/useLocalStorage";
