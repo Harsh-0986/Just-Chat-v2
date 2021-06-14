@@ -28,13 +28,11 @@ io.on("connection", (socket) => {
 
       newRecipients.push(id);
 
-      socket.broadcast
-        .to(recipient)
-        .emit("receive-message", {
-          recipients: newRecipients,
-          sender: id,
-          text,
-        });
+      socket.broadcast.to(recipient).emit("receive-message", {
+        recipients: newRecipients,
+        sender: id,
+        text,
+      });
     });
   });
 });

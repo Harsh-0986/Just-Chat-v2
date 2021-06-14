@@ -14,7 +14,7 @@ export default function Sidebar({ id }) {
   const [modalOpen, setModalOpen] = useState(false);
   const conversationsOpen = activeKey === CONVERSATIONS_KEY;
   const url = window.location.href;
-  const copyUrl = "Follow this link to join me on Just-Chat " + "\n" + url + id;
+  const copyUrl = "Follow this link to join me on Just-Chat \n" + url + id;
 
   function closeModal() {
     setModalOpen(false);

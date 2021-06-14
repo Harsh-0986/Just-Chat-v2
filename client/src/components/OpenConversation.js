@@ -52,14 +52,16 @@ export default function OpenConversation() {
                 </div> */}
                 {message.fromMe && (
                   <div
-                    className="text-muted small"
+                    className="text-muted small align-items-start"
                     style={{ textAlign: "right" }}
                   >
                     You
                   </div>
                 )}
                 {!message.fromMe && (
-                  <div className="text-muted small">{message.senderName}</div>
+                  <div className="text-muted small align-items-end">
+                    {message.senderName}
+                  </div>
                 )}
               </div>
             );
